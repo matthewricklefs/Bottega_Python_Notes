@@ -1,0 +1,72 @@
+import random
+import time
+import os
+
+
+choices = ["*", "#", "$"]
+
+return_message = [
+  "Sucks Doesn't It?",
+  "Don't Worry, I'll take it all baby!!",
+  "BUuUuMmMmEeERrRrRr!!!",
+  "you snooze, you loooze"
+]
+
+play = True
+
+def shuffle():
+  for _ in range(random.randint(5, 20)):
+    os.system('clear')
+    print("|---|---|---|")
+    print("|", random.choice(choices), "|", random.choice(choices),"|", random.choice(choices),"|")
+    print("|", random.choice(choices), "|", random.choice(choices),"|", random.choice(choices),"|", "<-")
+    print("|", random.choice(choices), "|", random.choice(choices),"|", random.choice(choices),"|")
+    print("|---|---|---|")
+    time.sleep(.1)
+
+while play:
+  credits = 100
+  print('Welcome to the BOTTOMLESS VOID! \n In this voidless space we take CREDITS!!')
+
+  while credits > 0:
+    print('You have', credits, 'credits left.')
+
+    try:
+      bet = int(input('Bet amount: '))
+    except:
+      print('Please enter a whole number of credits. ')
+      continue
+    if bet > credits:
+      print('Not enough tokens.')
+    else:
+      credits -= bet
+      one = random.choice(choices)
+      two = random.choice(choices)
+      three = random.choice(choices)
+      shuffle()
+      os.system('clear')
+      print("|---|---|---|")
+      print("|", random.choice(choices),  "|", random.choice(choices), "|" ,random.choice(choices), "|")
+      print("|", one, "|", two, "|", three, "|", "<-")
+      print("|", random.choice(choices),  "|", random.choice(choices), "|" ,random.choice(choices), "|")
+      print("|---|---|---|")
+
+      if one == two and two == three:
+        amount_won = bet * 2
+        credits += amount_won 
+        print("You won", amount_won, "credits.")
+      else:
+        print(random.choice(return_message))
+
+        if credits == 0:
+          print("You are out of credits.")
+          play = False
+          break
+        play_again = input("Would you like to play again (y/n): ")
+        if play_again == "y":
+          continue
+        else:
+          play = False
+          break
+
+print("thank you for playing.")

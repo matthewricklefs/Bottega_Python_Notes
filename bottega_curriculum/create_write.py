@@ -77,8 +77,10 @@
 
 ####DELETING files  
 
-import os
+# import os
 
-os.remove("file-section/file_to_be_deleted.txt")
+# os.remove("file-section/file_to_be_deleted.txt")
 
-print("File Removed!")
+# print("File Removed!")
+
+

@@ -46,30 +46,39 @@
 
 ###Appending to a File in Python
 
-import datetime
-from time import sleep
+# import datetime
+# from time import sleep
 
-for i in range(5):
-    file_builder = open("logger.txt", "a+")
-    file_builder.write(f'{datetime.datetime.now()}\n')
-    file_builder.close()
+# for i in range(5):
+#     file_builder = open("logger.txt", "a+")
+#     file_builder.write(f'{datetime.datetime.now()}\n')
+#     file_builder.close()
 
-    print("file created")
+#     print("file created")
 
-    sleep(1)
+#     sleep(1)
 
 
 ### READING AND WORKING WITH FILE DATA
 
-def get_file_contents(filename):
-    queried_file = open(filename, 'r')
+# def get_file_contents(filename):
+#     queried_file = open(filename, 'r')
 
-    if queried_file.mode == 'r':
-        return queried_file.read()
+#     if queried_file.mode == 'r':
+#         return queried_file.read()
 
 
-content = get_file_contents('file-section/text_content.txt')
+# content = get_file_contents('file-section/text_content.txt')
 
-print(content)
+# print(content)
 
-print("Number of words", len(content.split()))
+# print("Number of words", len(content.split()))
+
+
+####DELETING files  
+
+import os
+
+os.remove("file-section/file_to_be_deleted.txt")
+
+print("File Removed!")

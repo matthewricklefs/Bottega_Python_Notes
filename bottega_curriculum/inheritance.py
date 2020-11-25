@@ -50,28 +50,95 @@
 
 ### Building Polymorphic Functions
 
-class Heading:
-    def __init__(self, content):
-      self.content = content
+# class Heading:
+#     def __init__(self, content):
+#       self.content = content
 
-    def render(self):
-      return f'<h1>{self.content}</h1>'
+#     def render(self):
+#       return f'<h1>{self.content}</h1>'
 
-class Div:
-  def __init__(self, content):
-    self.content = content
+# class Div:
+#   def __init__(self, content):
+#     self.content = content
 
-  def render(self):
-    return f'<div>{self.content}</div>'
+#   def render(self):
+#     return f'<div>{self.content}</div>'
 
-div_one = Div('Some content')
-heading = Heading('My Amazing Heading')
-div_two = Div('Another div')
+# div_one = Div('Some content')
+# heading = Heading('My Amazing Heading')
+# div_two = Div('Another div')
 
-def html_render(tag_object):
-  print(tag_object.render())
+# def html_render(tag_object):
+#   print(tag_object.render())
 
-html_render(div_one)
-html_render(div_two)
-html_render(heading)
+# html_render(div_one)
+# html_render(div_two)
+# html_render(heading)
 
+# Parent Class 
+# Abstract class
+
+### Class Inheritance Example..
+# class Fish:
+#   def __init__(self, first_name, last_name="Fish", skeleton="bone", eyelids=False):
+#     self.first_name = first_name
+#     self.last_name = last_name
+#     self.skeleton = skeleton
+#     self.eyelids = eyelids
+
+#   def swim(self):
+#     return "Swim Forwards"
+
+#   def swim_backwards(self):
+#     return "Swim backwards"
+
+# # Inheritance
+# class Trout(Fish):
+#   pass
+# bob = Trout("Bob",  "Fishers")
+
+# print(bob.first_name + " " + bob.last_name)
+# print(bob.eyelids)
+# print(bob.swim())
+# print(bob.swim_backwards())
+# # Subclass with its own class method
+
+# class Clownfish(Fish):
+#   def live_with_anemone(self):
+#     return "The clownfish is coexisting with sea anemone"
+# casey = Clownfish("Casey")
+
+# print(casey.first_name + " " + casey.last_name)
+# print(casey.swim())
+# print(casey.live_with_anemone())
+
+# # print(bob.live_with_anemone())
+
+# class Shark(Fish):
+#   # Override counstructor and swim_backwards methods, but inherits the swim method
+#   def __init__(self, first_name, last_name="Shark", skeleton="cartilage", eyelids=True):
+#     self.first_name = first_name
+#     self.last_name = last_name
+#     self.skeleton = skeleton
+#     self.eyelids = eyelids
+
+#   # polymorphism
+#   def swim_backwards(self):
+#     return "The shark cannot swim backwards, but can sink backwards"
+# sammy = Shark("Sammy")
+# print(sammy.first_name + " " + sammy.last_name)
+# print(sammy.swim())
+# print(sammy.swim_backwards())
+
+# # Mulitple Inheritance
+# class Coral:
+#   def community(self):
+#     return "Coral lives in a community."
+# class Anemome:
+#   def protect_clownfish(self):
+#     return "The anmeone is protecting the Clownfish"
+# class CoralReef(Coral, Anemome):
+#   pass
+# great_barrier = CoralReef()
+# print(great_barrier.community())
+# print(great_barrier.protect_clownfish())
